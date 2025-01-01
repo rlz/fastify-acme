@@ -46,11 +46,16 @@ export async function getCertAndKey(certDir: string, domain: string): Promise<Ce
     )
 }
 
+interface FastifyAcmeUnsecurePluginOpts {
+    redirectDomain?: string
+}
+
 /**
- * Fastify plugin to serve the ACME challenge
+ * Fastify plugin to serve the ACME challenge.
+ * If `redirectDomain` is set, all requests are redirected to the HTTPS version of the domain.
  */
 export const fastifyAcmeUnsecurePlugin = fp(
-    async function fastifyAcmeUnsecurePlugin(fastify: FastifyInstance<HttpServer>) {
+    async function fastifyAcmeUnsecurePlugin(fastify: FastifyInstance<HttpServer>, opts: FastifyAcmeUnsecurePluginOpts) {
         fastify.get(
             '/.well-known/acme-challenge/:token',
             {},
@@ -75,6 +80,18 @@ export const fastifyAcmeUnsecurePlugin = fp(
                 return body
             }
         )
+
+        const redirectDomain = opts.redirectDomain
+
+        if (redirectDomain !== undefined) {
+            fastify.all(
+                '*',
+                {},
+                async (req, resp) => {
+                    await resp.redirect(`https://${redirectDomain}${req.url}`)
+                }
+            )    
+        }
     }
 )
 

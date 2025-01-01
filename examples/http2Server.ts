@@ -8,7 +8,7 @@ const domain = 'example.com'
 // Always create unsecure server first, it needs for unsecure server
 // to start if certificate is not exist or expired
 const unsecure = fastify()
-unsecure.register(fastifyAcmeUnsecurePlugin)
+unsecure.register(fastifyAcmeUnsecurePlugin, { redirectDomain: domain })
 void unsecure.listen({ port: 80 })
 
 const certAndKey = await getCertAndKey(certDir, domain)

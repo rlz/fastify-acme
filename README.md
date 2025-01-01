@@ -42,7 +42,7 @@ const certDir = './cert'
 const domain = 'example.com'
 
 const unsecure = fastify()
-unsecure.register(fastifyAcmeUnsecurePlugin)
+unsecure.register(fastifyAcmeUnsecurePlugin, { redirectDomain: domain })
 
 void unsecure.listen({ port: 80 })
 
@@ -72,7 +72,7 @@ const certDir = './cert'
 const domain = 'example.com'
 
 const unsecure = fastify()
-unsecure.register(fastifyAcmeUnsecurePlugin)
+unsecure.register(fastifyAcmeUnsecurePlugin, { redirectDomain: domain })
 void unsecure.listen({ port: 80 })
 
 const certAndKey = await getCertAndKey(certDir, domain)
