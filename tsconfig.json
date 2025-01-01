@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+        "target": "ES2022",
+        "module": "ESNext",
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "skipLibCheck": true,
+        "outDir": "./dist",
+        "sourceMap": true,
+        "declaration": true,
+        "rootDir": "./src",
+    },
+    "exclude": [
+        "examples",
+        "dist"
+    ]
+}

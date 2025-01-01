@@ -1,0 +1,30 @@
+{
+    "name": "fastify-acme",
+    "version": "1.0.0",
+    "description": "Implement ACME protocol (plugin) for Fastify",
+    "main": "dist/index.js",
+    "bin": {
+        "fastify-acme-reg": "dist/cli.js"
+    },
+    "type": "module",
+    "scripts": {
+        "build": "tsc"
+    },
+    "author": "Dmitry Maslennikov <maslennikovdm@gmail.com>",
+    "license": "ISC",
+    "devDependencies": {
+        "@stylistic/eslint-plugin": "^2.12.1",
+        "@types/node": "^22.10.2",
+        "@typescript-eslint/parser": "^8.19.0",
+        "eslint-plugin-simple-import-sort": "^12.1.1",
+        "fastify": "^5.2.0",
+        "typescript": "^5.7.2",
+        "typescript-eslint": "^8.19.0"
+    },
+    "dependencies": {
+        "@fastify/sensible": "^6.0.2",
+        "acme-client": "^5.4.0",
+        "async-mutex": "^0.5.0",
+        "fastify-plugin": "^5.0.1"
+    }
+}
