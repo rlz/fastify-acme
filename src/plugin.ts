@@ -5,7 +5,7 @@ import { Server as HttpServer } from 'http'
 import { Http2SecureServer } from 'http2'
 import { Server as HttpsServer } from 'https'
 
-import { CertAndKey, getAccountUrl, getCert, getCertExpiry, getNewCert, shouldRenewCert } from './utils'
+import { CertAndKey, getAccountUrl, getCert, getCertExpiry, getNewCert, shouldRenewCert } from './utils.js'
 
 const acmeTokens: Record<string, string> = {}
 
