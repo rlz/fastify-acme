@@ -1,17 +1,33 @@
 {
     "name": "fastify-acme",
-    "version": "1.0.0",
+    "version": "1.0.1",
+    "author": "Dmitry Maslennikov <maslennikovdm@gmail.com>",
+    "license": "ISC",
     "description": "Implement ACME protocol (plugin) for Fastify",
-    "main": "dist/index.js",
+    "homepage": "https://github.com/rlz/fastify-acme",
+    "bugs": {
+        "url": "https://github.com/rlz/fastify-acme/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rlz/fastify-acme.git"
+    },
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": "./dist/index.js",
+        "./plugin": "./dist/plugin.js",
+        "./utils": "./dist/utils.js"
+    },
     "bin": {
         "fastify-acme-reg": "dist/cli.js"
     },
-    "type": "module",
     "scripts": {
+        "start": "node dist/cli.js",
         "build": "tsc"
     },
-    "author": "Dmitry Maslennikov <maslennikovdm@gmail.com>",
-    "license": "ISC",
     "devDependencies": {
         "@stylistic/eslint-plugin": "^2.12.1",
         "@types/node": "^22.10.2",
