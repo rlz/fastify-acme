@@ -1,6 +1,6 @@
 {
     "name": "fastify-acme",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "author": "Dmitry Maslennikov <maslennikovdm@gmail.com>",
     "license": "ISC",
     "description": "Implement ACME protocol (plugin) for Fastify",
@@ -16,11 +16,7 @@
     "files": [
         "dist"
     ],
-    "exports": {
-        ".": "./dist/index.js",
-        "./plugin": "./dist/plugin.js",
-        "./utils": "./dist/utils.js"
-    },
+    "main": "dist/index.js",
     "bin": {
         "fastify-acme-reg": "dist/cli.js"
     },

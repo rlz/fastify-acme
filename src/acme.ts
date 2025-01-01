@@ -1,7 +1,7 @@
 import acme from 'acme-client'
 import { Mutex } from 'async-mutex'
 
-import { getAccountUrl, getAcmeAccountPkey } from './utils.js'
+import { getAccountUrl, getAcmeAccountPkey } from './utils'
 
 const ACME_CLIENT: acme.Client | null = null
 const ACME_CLIENT_MUTEX = new Mutex()

@@ -1,3 +1,3 @@
-import { registerAcmeAccountCli } from './utils.js'
+import { registerAcmeAccountCli } from './utils'
 
 void registerAcmeAccountCli()
