@@ -8,6 +8,28 @@ Implement ACME protocol (plugin) for Fastify.
 npm install fastify-acme
 ```
 
+## Register ACME Account
+
+Before running the server, you need to register an ACME account. You can do this by installing the package globally and using the `fastify-acme-reg` CLI or programmatically by calling `registerAcmeAccount`.
+
+### Using CLI
+
+```bash
+npm install -g fastify-acme
+fastify-acme-reg
+```
+
+### Programmatically
+
+```typescript
+import { registerAcmeAccount } from 'fastify-acme'
+
+const certDir = './cert'
+const email = 'your-email@example.com'
+
+await registerAcmeAccount(certDir, email)
+```
+
 ## Usage
 
 ### HTTP Server Example
