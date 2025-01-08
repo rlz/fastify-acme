@@ -5,7 +5,7 @@ import { Server as HttpServer } from 'http'
 import { Http2SecureServer } from 'http2'
 import { Server as HttpsServer } from 'https'
 
-import { CertAndKey, getAccountUrl, getCert, getCertExpiry, getNewCert, shouldRenewCert } from './utils'
+import { CertAndKey, getAccountUrl, getCert, getCertExpiry, getNewCert, shouldRenewCert } from './utils.js'
 
 const acmeTokens: Record<string, string> = {}
 
@@ -90,7 +90,7 @@ export const fastifyAcmeUnsecurePlugin = fp(
                 async (req, resp) => {
                     await resp.redirect(`https://${redirectDomain}${req.url}`)
                 }
-            )    
+            )
         }
     }
 )

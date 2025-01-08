@@ -5,7 +5,7 @@ import acme from 'acme-client'
 import { readFileSync, writeFileSync } from 'fs'
 import path from 'path'
 
-import { getAcmeClient } from './acme'
+import { getAcmeClient } from './acme.js'
 
 /**
  * Get the filename for the account URL

@@ -1,21 +1,20 @@
 import stylistic from '@stylistic/eslint-plugin'
 import parser from '@typescript-eslint/parser'
+import importExtensionsPlugin from 'eslint-plugin-file-extension-in-import-ts'
 import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import tsEslint from 'typescript-eslint'
 
 export default [
     {
-        exclude: [
-            'node_modules/',
-            'dist/',
-            'examples/'
-        ]
-    },
-    {
         files: [
             'src/**/*.ts',
             '*.js'
         ],
+        ignores: [
+            'node_modules/',
+            'dist/',
+            'examples/'
+        ]
     },
     {
         languageOptions: {
@@ -42,6 +41,14 @@ export default [
         },
         rules: {
             'simple-import-sort/imports': 'error'
+        }
+    },
+    {
+        plugins: {
+            'file-extension-in-import-ts': importExtensionsPlugin
+        },
+        rules: {
+            'file-extension-in-import-ts/file-extension-in-import-ts': 'error'
         }
     },
     ...tsEslint.configs.recommended,
