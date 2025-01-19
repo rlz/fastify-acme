@@ -1,6 +1,6 @@
 {
     "name": "fastify-acme",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "author": "Dmitry Maslennikov <maslennikovdm@gmail.com>",
     "license": "ISC",
     "description": "Implement ACME protocol (plugin) for Fastify",
